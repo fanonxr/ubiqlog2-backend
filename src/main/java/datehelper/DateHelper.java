@@ -47,4 +47,28 @@ public  class DateHelper {
     LocalDateTime convertedTime = LocalDate.parse(userInput, inputTimeFormat).atStartOfDay();
     return convertedTime.format(ISOFormat);
   }
+
+  /** Helper Method to get an ending date that will identify a range between date
+   * @param dateString the date string to get the next day
+   * @return a iso time formatted string
+   * */
+  public static String getDayEndingDate(String dateString) {
+    DateTimeFormatter ISOFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    LocalDateTime convertedTime = LocalDate.parse(dateString, ISOFormat).plusDays(1).atStartOfDay();
+    return convertedTime.format(ISOFormat);
+  }
+
+  /** Helper method to get the ending date for an entire week */
+  public static String getWeekEndingDate(String dateString) {
+    DateTimeFormatter ISOFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    LocalDateTime convertedTime = LocalDate.parse(dateString, ISOFormat).plusDays(7).atStartOfDay();
+    return convertedTime.format(ISOFormat);
+  }
+
+  /** Helper method to get the ending date for an entire month */
+  public static String getMonthEndingDate(String dateString) {
+    DateTimeFormatter ISOFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    LocalDateTime convertedTime = LocalDate.parse(dateString, ISOFormat).plusDays(31).atStartOfDay();
+    return convertedTime.format(ISOFormat);
+  }
 }
