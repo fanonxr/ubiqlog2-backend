@@ -11,6 +11,6 @@ public class LuceneConstants {
   public static final String START_TIME = "start_time";
   public static final String END_TIME = "end_time";
 
-  static final String TIMESTAMP = "timestamp";
-  static final String SENSOR_NAME = "sensorName";
+  public static final String TIMESTAMP = "timestamp";
+  public static final String SENSOR_NAME = "sensorName";
 }
